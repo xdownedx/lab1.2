@@ -3,8 +3,8 @@
 #include <string>
 
 using namespace std;
-
-//просто класс самолеты
+//18 вариант
+// класс школьника
 class SchoolMan {
 
 private:
@@ -58,7 +58,6 @@ public:
     }
 };
 
-//удаление и возвращение наибольшего элемента
 template<class T>
 T pop(list<T>& lst,T elem) {
 
@@ -83,7 +82,7 @@ T pop(list<T>& lst,T elem) {
 
     return nElem;
 }
-//функция по добавлению в список с приоритетом
+//добавление с приоритетом
 template<class T>
 void push(list<T>& lst,T elem) {
 
@@ -131,7 +130,6 @@ int main() {
 
     //cout << pop(lst, scm2) << endl;
 
-    //вывод нашего списка
     list<SchoolMan>::iterator p = lst.begin();
 
     while (p != lst.end()) {
