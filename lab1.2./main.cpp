@@ -59,28 +59,15 @@ public:
 };
 
 template<class T>
-T pop(list<T>& lst,T elem) {
+T pop(list<T>& lst) {
 
-    T nElem;
+    auto p = lst.begin();
 
-    if (lst.empty()) {
-        exit(0);
-    }
+    T elem = *p;
 
-    list<SchoolMan>::iterator p = lst.begin();
+    lst.remove(elem);
 
-    while (p != lst.end()) {
-        if (*p == elem) {
-            lst.remove(elem);
-            break;
-        }
-        p++;
-    }
-    list<SchoolMan>::iterator p1 = lst.begin();
-
-    nElem = *p1;
-
-    return nElem;
+    return elem;
 }
 //добавление с приоритетом
 template<class T>
@@ -121,15 +108,24 @@ int main() {
     //заполнение класс школьник
     SchoolMan scm1("Виктория", "Шуманская", "Женский", 10, "07.04.1999", "Рязань");
     SchoolMan scm2("Максим", "Палёхин", "Мужской", 1, "20.12.2001", "Москва");
-    SchoolMan scm3("Александр", "Краснов", "Мужской", 5, "08.11.2001", "Ростов");
+    SchoolMan scm3("Антон", "Дунаевский", "Мужской", 8, "12.11.2001", "Павловский пасад");
+    SchoolMan scm4("Анатолий", "Красавин", "Мужской", 4, "01.02.2002", "Ростов");
+    SchoolMan scm5("Александр", "Краснов", "Мужской", 3, "08.11.2001", "Ростов");
+    SchoolMan scm6("Александр", "Сычев", "Мужской", 2, "04.01.2001", "Ростов");
+    SchoolMan scm8("Романов", "Алексей", "Мужской", 9, "23.05.2001", "Домодедово");
 
     //добавление в лист наши объекты
     push(lst, scm1);
     push(lst, scm2);
     push(lst, scm3);
+    push(lst, scm4);
+    push(lst, scm5);
+    push(lst, scm6);
+    push(lst, scm8);
 
-    //cout << pop(lst, scm2) << endl;
+    SchoolMan scm7 = pop(lst);
 
+    
     list<SchoolMan>::iterator p = lst.begin();
 
     while (p != lst.end()) {
