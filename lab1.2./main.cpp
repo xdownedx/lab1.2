@@ -123,22 +123,18 @@ int main() {
     push(lst, scm6);
     push(lst, scm8);
     
-    list<SchoolMan>::iterator p = lst.begin();
-    
-    while (p != lst.end()) {
-        cout << *p << endl;
-        p++;
-    }
     
     SchoolMan scm7 = pop(lst);
     
-    cout << "После удаления элемента: "<< endl;
-    
-    p = lst.begin();
+    list<SchoolMan>::iterator p = lst.begin();
 
     while (p != lst.end()) {
         cout << *p << endl;
         p++;
     }
+    cout << "Удаленный элемент: " << endl;
+
+    cout << scm7 << endl;
+
     return 0;
 }
